@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2017-10-20 16:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: commands\basic_commands.py:7
+msgid "Thank you for starting me!"
+msgstr ""
+
+#: commands\basic_commands.py:12
+msgid "This is a test!"
+msgstr ""
+
+#: commands\basic_commands.py:18
+msgid "Pong!"
+msgstr ""
+
+#: commands\basic_commands.py:24
+msgid "Nothing to set now."
+msgstr ""
+
+#: commands\group_management_commands.py:14
+#: commands\group_management_commands.py:84
+msgid "You cannot ban an admin!"
+msgstr ""
+
+#: commands\group_management_commands.py:19
+msgid "{0} (`{1}`) has been banned by {2}."
+msgstr ""
+
+#: commands\group_management_commands.py:34
+msgid "You cannot kick an admin!"
+msgstr ""
+
+#: commands\group_management_commands.py:40
+msgid "{0} (`{1}`) has been kicked by {2}."
+msgstr ""
+
+#: commands\group_management_commands.py:61
+msgid "You cannot tempban an admin!"
+msgstr ""
+
+#: commands\group_management_commands.py:67
+msgid "{0} (`{1}`) has been tempbanned by {2} for {3} minutes."
+msgstr ""
+
+#: commands\group_management_commands.py:89
+msgid "{0} (`{1}`) has been unbanned by {2}."
+msgstr ""
+
+#: utils.py:14
+msgid "You are not a developer!"
+msgstr ""
+
+#: utils.py:26
+msgid "You are not an admin in this chat!"
+msgstr ""
+
