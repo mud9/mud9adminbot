@@ -1,0 +1,9 @@
+# Token from @Botfather
+TOKEN = "123456789:ABCDEFGHIJKLMNOPQRSTUVWXYZ-1234567890"
+#  Main DEV's Telegram ID
+DEV = [123456789]
+# MySQL Server Details
+MYSQL_SERVER = "localhost"
+MYSQL_DBNAME = ""
+MYSQL_USERNAME = ""
+MYSQL_PASSWORD = ""
