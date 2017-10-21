@@ -40,8 +40,12 @@ def link_callback(bot, update):
     if chat.username:
         link = "https://t.me/{}".format(chat.username)
         grp.setlink(link)
-    update.effective_message(_("This is the group link: {}".format(link_markdown(chat.title, grp.link))))
-    pass
+    if grp.link:
+        update.effective_message.reply_text(_("This is the group link: {}").format(link_markdown(chat.title, grp.link)),
+                                            parse_mode=ParseMode.MARKDOWN)
+    else:
+        update.effective_message.reply_text(_("The group link has not been set yet."))
+    return
 
 
 @group_locales
