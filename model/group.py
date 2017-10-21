@@ -21,6 +21,7 @@ class Group(Base):
     username = Column(String)
     telegramid = Column(Integer)
     lang = Column(String, default="en_US")
+    link = Column(String)
     timeadded = Column(DateTime)
 
     def __repr__(self):
@@ -83,3 +84,7 @@ class Group(Base):
         count = session.query(func.count(Group.groupid)).scalar()
         return count
 
+    def setlink(self, link):
+        session = Session()
+        self.link = link
+        session.commit()

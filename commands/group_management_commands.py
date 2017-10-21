@@ -1,10 +1,14 @@
 from language import _, user_locale, group_locales
-from utils import escape_md, dev_only, group_admin_only, if_group_admin, mention
+from utils import (escape_md, dev_only, group_admin_only, if_group_admin,
+                   mention, groups_only_response, pm_only_response)
 from telegram.parsemode import ParseMode
 import datetime
+from telegram.ext import CommandHandler, Filters
+from shared_vars import dispatcher
 
 
 @group_locales
+@groups_only_response
 @group_admin_only
 def ban_callback(bot, update):
     chat_id = update.effective_chat.id
@@ -25,6 +29,7 @@ def ban_callback(bot, update):
 
 
 @group_locales
+@groups_only_response
 @group_admin_only
 def kick_callback(bot, update):
     chat_id = update.effective_chat.id
@@ -52,6 +57,7 @@ def secret_unban(bot, job):
 
 
 @group_locales
+@groups_only_response
 @group_admin_only
 def tempban_callback(bot, update, args, job_queue):
     chat_id = update.effective_chat.id
@@ -83,6 +89,7 @@ def tempban_callback(bot, update, args, job_queue):
 
 
 @group_locales
+@groups_only_response
 @group_admin_only
 def unban_callback(bot, update):
     chat_id = update.effective_chat.id
@@ -100,3 +107,11 @@ def unban_callback(bot, update):
                                                               user.mention_markdown(user.first_name)),
             parse_mode=ParseMode.MARKDOWN)
         return
+
+
+def register():
+    dispatcher.add_handler(CommandHandler("ban", ban_callback))
+    dispatcher.add_handler(CommandHandler("kick", kick_callback))
+    dispatcher.add_handler(CommandHandler("tempban", tempban_callback, pass_args=True,
+                                          pass_job_queue=True))
+    dispatcher.add_handler(CommandHandler("unban", unban_callback))

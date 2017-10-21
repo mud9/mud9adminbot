@@ -122,7 +122,10 @@ def group_locales(func):
         user, chat = _user_chat_from_update(update)
         locales = list()
 
-        us = GroupSetting.from_tg_chat_object(chat)
+        if chat.type == 'private':
+            us = UserSetting.from_tg_user_object(user)
+        else:
+            us = GroupSetting.from_tg_chat_object(chat)
 
         if us and us.lang != 'en_US':
             loc = us.lang

@@ -4,6 +4,7 @@ from config import DEV
 from functools import wraps
 from mwt import MWT
 from language import _
+import re
 
 
 def dev_only(func):
@@ -37,3 +38,31 @@ def group_admins(bot, chat_id):
 def if_group_admin(bot, chat_id, user_id):
     return user_id in group_admins(bot, chat_id)
 
+
+def groups_only_response(func):
+    @wraps(func)
+    def wrapped(bot, update, *args, **kwargs):
+        if update.effective_chat.type != 'group' or update.effective_chat.type != 'supergroup':
+            update.effective_message.reply_text(_("This command can only be used in groups!"))
+            return
+        return func(bot, update, *args, **kwargs)
+    return wrapped
+
+
+def pm_only_response(func):
+    @wraps(func)
+    def wrapped(bot, update, *args, **kwargs):
+        if update.effective_chat.type != 'private':
+            update.effective_message.reply_text(_("This command can only be used in PM!"))
+            return
+        return func(bot, update, *args, **kwargs)
+    return wrapped
+
+
+def check_group_link(link):
+    pattern = "^(http:\/\/|https:\/\/)?t(elegram)?\.(me|dog)\/joinchat\/[a-zA-Z0-9]{22}$"
+    return re.match(pattern, link)
+
+
+def link_markdown(name, link):
+    return "[{}]({})".format(escape_md(name), link)
