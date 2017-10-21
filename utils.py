@@ -60,7 +60,7 @@ def pm_only_response(func):
 
 
 def check_group_link(link):
-    pattern = "^(http:\/\/|https:\/\/)?t(elegram)?\.(me|dog)\/joinchat\/[a-zA-Z0-9]{22}$"
+    pattern = "^(http:\/\/|https:\/\/)?t(elegram)?\.(me|dog)\/joinchat\/[a-zA-Z0-9-_]{22}$"
     return re.match(pattern, link)
 
 
