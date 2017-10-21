@@ -1,6 +1,8 @@
 import logging
-from commands import basic_commands, group_management_commands, group_info_commands
 from shared_vars import updater, dispatcher
+import polib
+import pathlib
+from commands import basic_commands, group_management_commands, group_info_commands
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -10,6 +12,14 @@ logger = logging.getLogger(__name__)
 
 def error_handler(bot, update, error):
     logging.warning('Update "%s" caused error "%s"' % (update, error))
+
+
+def prepare():
+    lst = sorted(pathlib.Path.cwd().glob("**/*.po"))
+    for pth in lst:
+        if pth.suffix == '.po':
+            po = polib.pofile(str(pth))
+            po.save_as_mofile(str(pth).replace(".po", ".mo"))
 
 
 def main():

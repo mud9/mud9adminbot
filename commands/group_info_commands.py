@@ -4,7 +4,7 @@ from utils import (escape_md, dev_only, group_admin_only, if_group_admin,
 from telegram.parsemode import ParseMode
 import datetime
 from telegram.ext import CommandHandler
-from shared_vars import dispatcher
+from shared_vars import dispatcher, Session
 from shared_vars import Group as GroupSetting
 
 

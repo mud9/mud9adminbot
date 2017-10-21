@@ -20,7 +20,7 @@
 import json
 from telegram.ext import Updater
 from config import TOKEN
-from model.base import Base
+from model.base import Base, Session
 from model.user import User as U
 from model.group import Group as G
 # from game_manager import GameManager

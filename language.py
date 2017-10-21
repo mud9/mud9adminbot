@@ -25,9 +25,18 @@ from locales import available_locales as available
 from shared_vars import User as UserSetting
 from shared_vars import Group as GroupSetting
 
+import polib
+import pathlib
 
 GETTEXT_DOMAIN = 'mud9admin'
 GETTEXT_DIR = 'locales'
+
+
+def prepare():
+    for pth in pathlib.Path.cwd().iterdir():
+        if pth.suffix == '.po':
+            po = polib.pofile(pth)
+            po.save_as_mofile(pth.replace(".po", ".mo"))
 
 
 class _Underscore(object):

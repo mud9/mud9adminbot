@@ -87,4 +87,5 @@ class Group(Base):
     def setlink(self, link):
         session = Session()
         self.link = link
+        session.add(self)
         session.commit()
