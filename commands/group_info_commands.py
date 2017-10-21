@@ -63,6 +63,6 @@ def info_callback(bot, update):
 
 def register():
     dispatcher.add_handler(CommandHandler("setlink", setlink_callback, pass_args=True))
-    dispatcher.add_handler(CommandHandler("link", setlink_callback))
+    dispatcher.add_handler(CommandHandler("link", link_callback))
     dispatcher.add_handler(CommandHandler("setinfo", setinfo_callback))
     dispatcher.add_handler(CommandHandler("info", info_callback))
