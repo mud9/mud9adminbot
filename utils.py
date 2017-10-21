@@ -42,7 +42,7 @@ def if_group_admin(bot, chat_id, user_id):
 def groups_only_response(func):
     @wraps(func)
     def wrapped(bot, update, *args, **kwargs):
-        if update.effective_chat.type != 'group' or update.effective_chat.type != 'supergroup':
+        if update.effective_chat.type != 'group' and update.effective_chat.type != 'supergroup':
             update.effective_message.reply_text(_("This command can only be used in groups!"))
             return
         return func(bot, update, *args, **kwargs)

@@ -1,5 +1,5 @@
 import logging
-from commands import basic_commands, group_management_commands
+from commands import basic_commands, group_management_commands, group_info_commands
 from shared_vars import updater, dispatcher
 
 
@@ -17,6 +17,8 @@ def main():
     basic_commands.register()
     # group man
     group_management_commands.register()
+    # group info
+    group_info_commands.register()
     # error handler
     dispatcher.add_error_handler(error_handler)
     # start the bot
