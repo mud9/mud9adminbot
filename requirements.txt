@@ -1,0 +1,7 @@
+certifi
+future
+polib
+PyMySQL
+python-telegram-bot>=8.0
+pytz
+SQLAlchemy
