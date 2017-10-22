@@ -70,6 +70,16 @@ class User(Base):
         except:
             return False
 
+    @staticmethod
+    def from_username(username: str):
+        session = Session()
+        try:
+            u = session.query(User).filter(User.username == username).one()
+            session.expunge_all()
+            return u
+        except:
+            return False
+
     @property
     def full_name(self):
         full = self.first_name
@@ -79,17 +89,11 @@ class User(Base):
 
     @property
     def markdown_first(self):
-        text = self.first_name
-        if self.username:
-            text = "[{}](http://t.me/{})".format(self.first_name, self.username)
-        return text
+        return "[{}](tg://user?id={})".format(self.first_name, self.telegramid)
 
     @property
     def markdown_full(self):
-        text = self.full_name
-        if self.username:
-            text = "[{}](http://t.me/{})".format(self.full_name, self.username)
-        return text
+        return "[{}](tg://user?id={})".format(self.full_name, self.telegramid)
 
     def add_ban(self, num: int):
         session = Session()

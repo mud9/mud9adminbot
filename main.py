@@ -2,7 +2,7 @@ import logging
 from shared_vars import updater, dispatcher
 import polib
 import pathlib
-from commands import basic_commands, group_management_commands, group_info_commands
+from commands import basic_commands, group_management_commands, group_info_commands, preliminary, welcome_commands
 
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -23,12 +23,16 @@ def prepare():
 
 
 def main():
+    # pre-process for DB
+    preliminary.register()
     # basic commands
     basic_commands.register()
     # group man
     group_management_commands.register()
     # group info
     group_info_commands.register()
+    # welcome
+    welcome_commands.register()
     # error handler
     dispatcher.add_error_handler(error_handler)
     # start the bot

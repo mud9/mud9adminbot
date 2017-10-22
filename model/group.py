@@ -22,6 +22,9 @@ class Group(Base):
     telegramid = Column(Integer)
     lang = Column(String, default="en_US")
     link = Column(String)
+    info = Column(String)
+    rules = Column(String)
+    welcome = Column(String)
     timeadded = Column(DateTime)
 
     def __repr__(self):
@@ -40,7 +43,7 @@ class Group(Base):
             g.username = chat.username
         except NoResultFound:
             g = Group(name=chat.title, username=chat.username, telegramid=chat.id,
-                     timeadded=datetime.now(timezone('Asia/Hong_Kong')))
+                      timeadded=datetime.now(timezone('Asia/Hong_Kong')))
             session.add(g)
 
         session.commit()
@@ -87,5 +90,23 @@ class Group(Base):
     def setlink(self, link):
         session = Session()
         self.link = link
+        session.add(self)
+        session.commit()
+
+    def setinfo(self, info):
+        session = Session()
+        self.info = info
+        session.add(self)
+        session.commit()
+
+    def setrules(self, rules):
+        session = Session()
+        self.rules = rules
+        session.add(self)
+        session.commit()
+
+    def setwelcome(self, welcome):
+        session = Session()
+        self.welcome = welcome
         session.add(self)
         session.commit()
