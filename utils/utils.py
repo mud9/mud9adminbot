@@ -2,7 +2,7 @@ from telegram.utils.helpers import escape_markdown as escape_md
 from telegram.utils.helpers import mention_markdown as mention
 from config import DEV
 from functools import wraps
-from mwt import MWT
+from .mwt import MWT
 from language import _
 import re
 

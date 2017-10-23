@@ -20,9 +20,9 @@
 import json
 from telegram.ext import Updater
 from config import TOKEN
-from model.base import Base, Session
-from model.user import User as U
-from model.group import Group as G
+from database.base import Base, Session
+from database.user import User as U
+from database.group import Group as G
 # from game_manager import GameManager
 # from database import db
 # import user_setting  # required to generate db mapping

@@ -1,4 +1,4 @@
-from main import main
+from program import main
 import polib
 import pathlib
 

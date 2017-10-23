@@ -1,6 +1,6 @@
 from language import _, user_locale, group_locales
-from utils import (escape_md, dev_only, group_admin_only, if_group_admin,
-                   mention, groups_only_response, pm_only_response)
+from utils.utils import (escape_md, dev_only, group_admin_only, if_group_admin,
+                         mention, groups_only_response, pm_only_response)
 from telegram.parsemode import ParseMode
 import datetime
 from telegram.ext import CommandHandler, Filters

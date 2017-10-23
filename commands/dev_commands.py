@@ -1,5 +1,5 @@
 from language import user_locale
-from utils import dev_only
+from utils.utils import dev_only
 from telegram.parsemode import ParseMode
 from telegram.ext import CommandHandler
 from telegram.vendor.ptb_urllib3.urllib3 import PoolManager
