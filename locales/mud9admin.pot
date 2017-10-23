@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2017-10-20 16:56+0800\n"
+"POT-Creation-Date: 2017-10-23 12:31+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,56 +15,158 @@ msgstr ""
 "Generated-By: pygettext.py 1.5\n"
 
 
-#: commands\basic_commands.py:7
+#: commands\basic_commands.py:10
 msgid "Thank you for starting me!"
 msgstr ""
 
-#: commands\basic_commands.py:12
+#: commands\basic_commands.py:15
 msgid "This is a test!"
 msgstr ""
 
-#: commands\basic_commands.py:18
+#: commands\basic_commands.py:21
 msgid "Pong!"
 msgstr ""
 
-#: commands\basic_commands.py:24
+#: commands\basic_commands.py:27
 msgid "Nothing to set now."
 msgstr ""
 
-#: commands\group_management_commands.py:14
-#: commands\group_management_commands.py:84
+#: commands\group_info_commands.py:26
+msgid "The link you provided is invalid."
+msgstr ""
+
+#: commands\group_info_commands.py:29
+msgid "Please provide the group link."
+msgstr ""
+
+#: commands\group_info_commands.py:32
+msgid "The link is set to: {}"
+msgstr ""
+
+#: commands\group_info_commands.py:46
+msgid "This is the group link: {}"
+msgstr ""
+
+#: commands\group_info_commands.py:50
+msgid "The group link has not been set yet."
+msgstr ""
+
+#: commands\group_info_commands.py:65
+msgid "Please reply to an old message or use `/setinfo something here`."
+msgstr ""
+
+#: commands\group_info_commands.py:73
+msgid "Group info has been saved."
+msgstr ""
+
+#: commands\group_info_commands.py:77
+msgid "Group info cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: commands\group_info_commands.py:88
+msgid "Info has not been set in this group."
+msgstr ""
+
+#: commands\group_info_commands.py:92
+msgid ""
+"*Group Info*:\n"
+"{}"
+msgstr ""
+
+#: commands\group_info_commands.py:96
+msgid "The saved info message was too long. Please `/setinfo` again."
+msgstr ""
+
+#: commands\group_info_commands.py:115
+msgid "Please reply to an old message or use `/setrules something here`."
+msgstr ""
+
+#: commands\group_info_commands.py:123
+msgid "Group rules has been saved."
+msgstr ""
+
+#: commands\group_info_commands.py:127
+msgid "Group rules cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: commands\group_info_commands.py:138
+msgid "Rules has not been set in this group."
+msgstr ""
+
+#: commands\group_info_commands.py:142
+msgid ""
+"*Group Rules*:\n"
+"{}"
+msgstr ""
+
+#: commands\group_info_commands.py:146
+msgid "The saved rules message was too long. Please `/setinfo` again."
+msgstr ""
+
+#: commands\group_management_commands.py:22
+#: commands\group_management_commands.py:35
+msgid "Reply to someone or use `/ban username/id`."
+msgstr ""
+
+#: commands\group_management_commands.py:30
+#: commands\group_management_commands.py:42
+msgid "Sorry, I probably have never seen this user."
+msgstr ""
+
+#: commands\group_management_commands.py:45
+#: commands\group_management_commands.py:126
 msgid "You cannot ban an admin!"
 msgstr ""
 
-#: commands\group_management_commands.py:19
+#: commands\group_management_commands.py:50
 msgid "{0} (`{1}`) has been banned by {2}."
 msgstr ""
 
-#: commands\group_management_commands.py:34
+#: commands\group_management_commands.py:66
 msgid "You cannot kick an admin!"
 msgstr ""
 
-#: commands\group_management_commands.py:40
+#: commands\group_management_commands.py:72
 msgid "{0} (`{1}`) has been kicked by {2}."
 msgstr ""
 
-#: commands\group_management_commands.py:61
+#: commands\group_management_commands.py:100
 msgid "You cannot tempban an admin!"
 msgstr ""
 
-#: commands\group_management_commands.py:67
+#: commands\group_management_commands.py:108
 msgid "{0} (`{1}`) has been tempbanned by {2} for {3} minutes."
 msgstr ""
 
-#: commands\group_management_commands.py:89
+#: commands\group_management_commands.py:131
 msgid "{0} (`{1}`) has been unbanned by {2}."
 msgstr ""
 
-#: utils.py:14
+#: commands\welcome_commands.py:19
+msgid "Please enter your desired welcome message."
+msgstr ""
+
+#: commands\welcome_commands.py:27
+msgid "Group welcome has been saved."
+msgstr ""
+
+#: commands\welcome_commands.py:31
+msgid "Group welcome cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: utils.py:15
 msgid "You are not a developer!"
 msgstr ""
 
-#: utils.py:26
+#: utils.py:27
 msgid "You are not an admin in this chat!"
+msgstr ""
+
+#: utils.py:46
+msgid "This command can only be used in groups!"
+msgstr ""
+
+#: utils.py:56
+msgid "This command can only be used in PM!"
 msgstr ""
 
