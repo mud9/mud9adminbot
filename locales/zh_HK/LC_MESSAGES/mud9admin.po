@@ -1,71 +1,162 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR ORGANIZATION
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2017-10-20 16:56+0800\n"
-"PO-Revision-Date: 2017-10-20 17:00+0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: zh_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.5\n"
-"X-Generator: Poedit 2.0.4\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: Mud9AdminBot\n"
+"Language: zh-hk\n"
 
-#: commands\basic_commands.py:7
+#: commands\basic_commands.py:10
 msgid "Thank you for starting me!"
 msgstr "多謝你啟動我！"
 
-#: commands\basic_commands.py:12
+#: commands\basic_commands.py:15
 msgid "This is a test!"
 msgstr "呢個係一個測試！"
 
-#: commands\basic_commands.py:18
+#: commands\basic_commands.py:21
 msgid "Pong!"
 msgstr "係！"
 
-#: commands\basic_commands.py:24
+#: commands\basic_commands.py:27
 msgid "Nothing to set now."
 msgstr "而家未有嘢可以設定。"
 
-#: commands\group_management_commands.py:14
-#: commands\group_management_commands.py:84
+#: commands\group_management_commands.py:45
+#: commands\group_management_commands.py:126
 msgid "You cannot ban an admin!"
 msgstr "你唔可以封鎖另一個管理員架喎！"
 
-#: commands\group_management_commands.py:19
+#: commands\group_management_commands.py:50
 msgid "{0} (`{1}`) has been banned by {2}."
 msgstr "{0} (`{1}`) 己經畀 {2} 封鎖咗。"
 
-#: commands\group_management_commands.py:34
+#: commands\group_management_commands.py:66
 msgid "You cannot kick an admin!"
 msgstr "你唔可以踢走另一個管理員架喎！"
 
-#: commands\group_management_commands.py:40
+#: commands\group_management_commands.py:72
 msgid "{0} (`{1}`) has been kicked by {2}."
 msgstr "{0} (`{1}`) 己經畀 {2} 踢走咗。"
 
-#: commands\group_management_commands.py:61
+#: commands\group_management_commands.py:100
 msgid "You cannot tempban an admin!"
 msgstr "你唔可以暫時封鎖另一個管理員架喎！"
 
-#: commands\group_management_commands.py:67
+#: commands\group_management_commands.py:108
 msgid "{0} (`{1}`) has been tempbanned by {2} for {3} minutes."
 msgstr "{0} (`{1}`) 己經畀 {2} 暫時封鎖咗 {3} 分鐘。"
 
-#: commands\group_management_commands.py:89
+#: commands\group_management_commands.py:131
 msgid "{0} (`{1}`) has been unbanned by {2}."
 msgstr "{2} 己經解除咗對 {0} (`{1}`) 嘅封鎖。"
 
-#: utils.py:14
+#: utils.py:15
 msgid "You are not a developer!"
 msgstr "你唔係開發人員！"
 
-#: utils.py:26
+#: utils.py:27
 msgid "You are not an admin in this chat!"
 msgstr "你唔係呢個群組嘅管理員！"
+
+#: commands\group_info_commands.py:26
+msgid "The link you provided is invalid."
+msgstr ""
+
+#: commands\group_info_commands.py:29
+msgid "Please provide the group link."
+msgstr ""
+
+#: commands\group_info_commands.py:32
+msgid "The link is set to: {}"
+msgstr ""
+
+#: commands\group_info_commands.py:46
+msgid "This is the group link: {}"
+msgstr ""
+
+#: commands\group_info_commands.py:50
+msgid "The group link has not been set yet."
+msgstr ""
+
+#: commands\group_info_commands.py:65
+msgid "Please reply to an old message or use `/setinfo something here`."
+msgstr ""
+
+#: commands\group_info_commands.py:73
+msgid "Group info has been saved."
+msgstr ""
+
+#: commands\group_info_commands.py:77
+msgid "Group info cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: commands\group_info_commands.py:88
+msgid "Info has not been set in this group."
+msgstr ""
+
+#: commands\group_info_commands.py:92
+msgid "*Group Info*:\n"
+"{}"
+msgstr ""
+
+#: commands\group_info_commands.py:96
+msgid "The saved info message was too long. Please `/setinfo` again."
+msgstr ""
+
+#: commands\group_info_commands.py:115
+msgid "Please reply to an old message or use `/setrules something here`."
+msgstr ""
+
+#: commands\group_info_commands.py:123
+msgid "Group rules has been saved."
+msgstr ""
+
+#: commands\group_info_commands.py:127
+msgid "Group rules cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: commands\group_info_commands.py:138
+msgid "Rules has not been set in this group."
+msgstr ""
+
+#: commands\group_info_commands.py:142
+msgid "*Group Rules*:\n"
+"{}"
+msgstr ""
+
+#: commands\group_info_commands.py:146
+msgid "The saved rules message was too long. Please `/setinfo` again."
+msgstr ""
+
+#: commands\group_management_commands.py:22
+#: commands\group_management_commands.py:35
+msgid "Reply to someone or use `/ban username/id`."
+msgstr ""
+
+#: commands\group_management_commands.py:30
+#: commands\group_management_commands.py:42
+msgid "Sorry, I probably have never seen this user."
+msgstr ""
+
+#: commands\welcome_commands.py:19
+msgid "Please enter your desired welcome message."
+msgstr ""
+
+#: commands\welcome_commands.py:27
+msgid "Group welcome has been saved."
+msgstr ""
+
+#: commands\welcome_commands.py:31
+msgid "Group welcome cannot be saved, there is probably some markdown error."
+msgstr ""
+
+#: utils.py:46
+msgid "This command can only be used in groups!"
+msgstr ""
+
+#: utils.py:56
+msgid "This command can only be used in PM!"
+msgstr ""
+
