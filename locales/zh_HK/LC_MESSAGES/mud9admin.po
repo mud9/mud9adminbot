@@ -70,11 +70,11 @@ msgstr ""
 
 #: commands\group_info_commands.py:32
 msgid "The link is set to: {}"
-msgstr ""
+msgstr "群組連結已經設定咗做：{}"
 
 #: commands\group_info_commands.py:46
 msgid "This is the group link: {}"
-msgstr ""
+msgstr "群組連結係：{}"
 
 #: commands\group_info_commands.py:50
 msgid "The group link has not been set yet."
