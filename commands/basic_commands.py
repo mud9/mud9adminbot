@@ -1,5 +1,5 @@
 from language import _, user_locale, group_locales
-from utils.utils import escape_md, dev_only, group_admin_only, groups_only_response, pm_only_response
+from utils.utils import escape_md, dev_only, group_admin_only, groups_only_response, pm_only_response, pass_db
 from shared_vars import dispatcher
 from telegram.ext import CommandHandler, Filters
 
@@ -11,7 +11,9 @@ def start_callback(bot, update):
 
 
 @group_locales
-def test_callback(bot, update):
+@pass_db
+def test_callback(bot, update, grp):
+    print(grp)
     update.message.reply_text(_("This is a test!"))
 
 

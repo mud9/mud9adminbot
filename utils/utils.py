@@ -4,7 +4,26 @@ from config import DEV
 from functools import wraps
 from .mwt import MWT
 from language import _
+from shared_vars import Group as Grp, User as Usr
 import re
+
+
+def pass_db(chat_only=False, user_only=False):
+    def pass_db_real(func):
+        @wraps(func)
+        def wrapped(bot, update, *args, **kwargs):
+            usr = Usr.from_tg_user_object(update.effective_user)
+            if not update.effective_chat.type == 'private':
+                grp = Grp.from_tg_chat_object(update.effective_chat)
+            else:
+                grp = None
+            if chat_only:
+                return func(bot, update, grp, *args, **kwargs)
+            if user_only:
+                return func(bot, update, usr, *args, **kwargs)
+            return func(bot, update, grp, usr, *args, **kwargs)
+        return wrapped
+    return pass_db_real
 
 
 def dev_only(func):

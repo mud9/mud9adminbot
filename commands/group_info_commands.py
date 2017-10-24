@@ -1,5 +1,5 @@
 from language import _, user_locale, group_locales
-from utils.utils import (escape_md, dev_only, group_admin_only, if_group_admin,
+from utils.utils import (escape_md, dev_only, group_admin_only, if_group_admin, pass_db,
                          mention, groups_only_response, pm_only_response, check_group_link, link_markdown)
 from telegram.parsemode import ParseMode
 import datetime
@@ -12,9 +12,9 @@ from shared_vars import Group as GroupSetting
 @group_locales
 @groups_only_response
 @group_admin_only
-def setlink_callback(bot, update, args):
+@pass_db(chat_only=True)
+def setlink_callback(bot, update, grp, args):
     chat = update.effective_chat
-    grp = GroupSetting.from_tg_chat_object(chat)
     if chat.username:
         link = "https://t.me/{}".format(chat.username)
     else:
@@ -36,9 +36,9 @@ def setlink_callback(bot, update, args):
 
 @group_locales
 @groups_only_response
-def link_callback(bot, update):
+@pass_db(chat_only=True)
+def link_callback(bot, update, grp):
     chat = update.effective_chat
-    grp = GroupSetting.from_tg_chat_object(chat)
     if chat.username:
         link = "https://t.me/{}".format(chat.username)
         grp.setlink(link)
@@ -54,9 +54,9 @@ def link_callback(bot, update):
 @group_locales
 @groups_only_response
 @group_admin_only
-def setinfo_callback(bot, update, args):
+@pass_db(chat_only=True)
+def setinfo_callback(bot, update, grp, args):
     msg = update.effective_message
-    grp = GroupSetting.from_tg_chat_object(update.effective_chat)
     if msg.reply_to_message:
         msg = msg.reply_to_message
         md_text = msg.text_markdown
@@ -81,9 +81,9 @@ def setinfo_callback(bot, update, args):
 
 @group_locales
 @groups_only_response
-def info_callback(bot, update):
+@pass_db(chat_only=True)
+def info_callback(bot, update, grp):
     msg = update.effective_message
-    grp = GroupSetting.from_tg_chat_object(update.effective_chat)
     if not grp.info:
         msg.reply_text(_("Info has not been set in this group."))
         return
@@ -104,9 +104,9 @@ def info_callback(bot, update):
 @group_locales
 @groups_only_response
 @group_admin_only
-def setrules_callback(bot, update, args):
+@pass_db(chat_only=True)
+def setrules_callback(bot, update, grp, args):
     msg = update.effective_message
-    grp = GroupSetting.from_tg_chat_object(update.effective_chat)
     if msg.reply_to_message:
         msg = msg.reply_to_message
         md_text = msg.text_markdown
@@ -131,9 +131,9 @@ def setrules_callback(bot, update, args):
 
 @group_locales
 @groups_only_response
-def rules_callback(bot, update):
+@pass_db(chat_only=True)
+def rules_callback(bot, update, grp):
     msg = update.effective_message
-    grp = GroupSetting.from_tg_chat_object(update.effective_chat)
     if not grp.rules:
         msg.reply_text(_("Rules has not been set in this group."))
         return
