@@ -11,8 +11,6 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
-  - pip install --upgrade pylint
   - pip install --upgrade flake8
 script:
-  - pylint -E .
-  - python flake8 .
+  - flake8 .
